@@ -9,13 +9,13 @@ class FireSearchResults
             req.url '/fires/search'
             req.params['p'] = @location
             req.params['radius'] = @radius
-            req.params['from'] = '-1months'
             req.params['client_id'] = ENV['CLIENT_ID']
             req.params['client_secret'] = ENV['CLIENT_SECRET']
         end
     end
 
-    def run 
+    def run
+        binding.pry 
         JSON.parse(search.body, symbolize_names: true)[:response]
     end
 

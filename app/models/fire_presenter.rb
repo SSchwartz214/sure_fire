@@ -1,10 +1,7 @@
 class FirePresenter
-    attr_reader :location,
-                :radius
-
     def initialize(fire_data)
-        @location = fire_data[:location]
-        @radius = fire_data[:radius]
+        @location = fire_data["location"]
+        @radius = fire_data["radius"]
     end
 
     def fires
@@ -15,7 +12,7 @@ class FirePresenter
 
 private
 
-    def fire_search_results(location, radius)
-       @results ||= FireSearchResults.new(location, radius).run 
+    def fire_search_results
+       @results ||= FireSearchResults.new(@location, @radius).run 
     end
 end
