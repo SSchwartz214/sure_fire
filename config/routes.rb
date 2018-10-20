@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      namespace :current do
+
+        get '/fires', to: 'fires#index'
+      end
+    end
+  end
 end
