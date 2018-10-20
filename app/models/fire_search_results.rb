@@ -6,7 +6,7 @@ class FireSearchResults
 
     def search 
         conn.get do |req|
-            req.url '/fires/closest'
+            req.url '/fires/search'
             req.params['p'] = @location
             req.params['radius'] = @radius
             req.params['from'] = '-1months'

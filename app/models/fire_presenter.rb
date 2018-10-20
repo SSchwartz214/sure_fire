@@ -9,6 +9,7 @@ class FirePresenter
 
     def fires
         fire_search_results.map do |result|
+            Fire.new(result).to_json
         end
     end
 
